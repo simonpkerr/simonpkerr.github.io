@@ -17,7 +17,8 @@ const IndexPage = () => (
     </p>
     <p>
       I'm an artist and I like to play a few different instruments including
-      guitar, piano and cello.
+      guitar, piano and cello. I'm also fluent in Mandarin Chinese, having lived
+      there and studied the language for the past 17 years.
     </p>
     <p>I&rsquo;ve got 2 kids, a great wife, and a cute dog called Skye.</p>
     <h2>Social media</h2>
