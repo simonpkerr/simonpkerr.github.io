@@ -1,6 +1,7 @@
 import React from "react"
 import A from "../components/a"
 import Layout from "../components/layout"
+import ListItem from "../components/listItem"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -23,31 +24,35 @@ const IndexPage = () => (
     <p>I&rsquo;ve got 2 kids, a great wife, and a cute dog called Skye.</p>
     <h2>Social media</h2>
     <ul>
-      <li>
+      <ListItem>
         <A
           href="https://www.linkedin.com/in/simon-kerr-06a53a25/"
           target="_blank"
         >
           LinkedIn
         </A>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem>
         <A href="https://www.instagram.com/simonpkerr" target="_blank">
           Instagram
         </A>
-      </li>
-      <li>
+      </ListItem>
+      <ListItem>
         <A href="https://twitter.com/simon_p_kerr" target="_blank">
           Twitter
         </A>
-      </li>
+      </ListItem>
     </ul>
     <h2>Work</h2>
     <ul>
-      <li>Capital One - Principal software engineer (web)</li>
-      <li>SK Web Consultancy Ltd. - Company director</li>
-      <li>Oegen - Lead software engineer</li>
-      <li>Leicester City Council - Web Manager</li>
+      <ListItem>
+        2016-Present: Capital One - Principal software engineer (web)
+      </ListItem>
+      <ListItem>
+        2019-Present: SK Web Consultancy Ltd. - Company director
+      </ListItem>
+      <ListItem>2015-2016: Oegen - Lead software engineer</ListItem>
+      <ListItem>2009-2015: Leicester City Council - Web Manager</ListItem>
     </ul>
   </Layout>
 )
