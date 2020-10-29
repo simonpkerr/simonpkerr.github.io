@@ -19,6 +19,9 @@ breakpoints.mobile = `${breakpoints[0]}px`
 breakpoints.tablet = `${breakpoints[1]}px`
 breakpoints.desktop = `${breakpoints[2]}px`
 breakpoints.lgDesktop = `${breakpoints[3]}px`
+breakpoints.mobileMin = `@media screen and (min-width:${breakpoints.mobile})`
+breakpoints.tabletMin = `@media screen and (min-width:${breakpoints.tablet})`
+breakpoints.desktopMin = `@media screen and (min-width:${breakpoints.desktop})`
 
 const space = {
   small: "1rem",
@@ -30,17 +33,18 @@ const components = {
   layout: css`
     margin: 0 auto;
     max-width: ${breakpoints.desktop};
-    padding: ${space.small} ${space.medium};
+    padding: ${space.medium};
   `,
 }
 
 const fontSizes = [
-  "0.8rem",
-  "1.25rem",
-  "1.563rem",
-  "1.953rem",
-  "2.441",
-  "3.052",
+  "0.75rem",
+  "1.333rem",
+  "1.777rem",
+  "2.369rem",
+  "3.157rem",
+  "4.209rem",
+  "1.6rem",
 ]
 fontSizes.xSmall = fontSizes[0]
 fontSizes.small = fontSizes[1]
@@ -48,18 +52,43 @@ fontSizes.medium = fontSizes[2]
 fontSizes.large = fontSizes[3]
 fontSizes.xLarge = fontSizes[4]
 fontSizes.xxLarge = fontSizes[5]
+fontSizes.default = fontSizes[6]
 
-export default {
-  colors,
-  breakpoints,
-  components,
-  space,
-  fontSizes,
+const typography = {
+  default: css`
+    font-size: ${fontSizes.default};
+    line-height: 1.75;
+    color: ${colors.primary2};
+    margin: ${space.medium} 0;
+  `,
+  heading: css`
+    margin: 3rem 0 1.38rem;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+    color: ${colors.primary3};
+  `,
+  h1: css`
+    margin-top: 0;
+    font-size: ${fontSizes.xxLarge};
+  `,
+  h2: css`
+    font-size: ${fontSizes.xLarge};
+  `,
+  h3: css`
+    font-size: ${fontSizes.large};
+  `,
+  h4: css`
+    font-size: ${fontSizes.medium};
+  `,
+  h5: css`
+    font-size: ${fontSizes.small};
+  `,
 }
 
 export const GlobalStyles = createGlobalStyle`
   html {
-    font-size: 100%;
+    font-size: 62.5%;
   }
 
   body {
@@ -79,16 +108,29 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 {
     margin-top: 0;
-    font-size: 3.052rem;
+    font-size: ${fontSizes.xxLarge};
   }
 
-  h2 {font-size: 2.441rem;}
+  h2 {font-size: ${fontSizes.xLarge};}
 
-  h3 {font-size: 1.953rem;}
+  h3 {font-size: ${fontSizes.large};}
 
-  h4 {font-size: 1.563rem;}
+  h4 {font-size: ${fontSizes.medium};}
 
-  h5 {font-size: 1.25rem;}
+  h5 {font-size: ${fontSizes.small};}
 
-  small, .text_small {font-size: 0.8rem;}
+  small, .text_small {font-size: ${fontSizes.xSmall};}
+
+  p {
+    font-size: ${fontSizes.default}
+  }
 `
+
+export default {
+  colors,
+  breakpoints,
+  components,
+  space,
+  fontSizes,
+  typography,
+}
