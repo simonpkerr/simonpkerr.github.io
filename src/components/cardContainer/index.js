@@ -2,46 +2,9 @@ import React, { useState } from "react"
 import { AnimateSharedLayout, AnimatePresence, motion } from "framer-motion"
 import styled, { css } from "styled-components"
 import Heading from "../heading"
-import Paragraph from "../paragraph"
-import ListItem from "../listItem"
 import CloseButton from "../closeButton"
 import Box from "../box"
-
-const content = {
-  about: (
-    <>
-      <Paragraph>
-        I&rsquo;ve worked for over 20 years in both the public and private
-        sector, working with React, Node, AWS, Umbraco, Hubspot, and a load of
-        other stuff.
-      </Paragraph>
-      <Paragraph>
-        I&rsquo;ve got a couple of degrees in Multimedia and Creative Technology
-        and I&rsquo;m an AWS certified developer.
-      </Paragraph>
-      <Paragraph>
-        I'm an artist and I like to play a few different instruments including
-        guitar, piano and cello. I'm also fluent in Mandarin Chinese, having
-        lived there and studied the language for the past 17 years.
-      </Paragraph>
-      <Paragraph>
-        I&rsquo;ve got 2 kids, a great wife, and a cute dog called Skye.
-      </Paragraph>
-    </>
-  ),
-  work: (
-    <ul>
-      <ListItem>
-        2016-Present: Capital One - Principal software engineer (web)
-      </ListItem>
-      <ListItem>
-        2019-Present: SK Web Consultancy Ltd. - Company director
-      </ListItem>
-      <ListItem>2015-2016: Oegen - Lead software engineer</ListItem>
-      <ListItem>2009-2015: Leicester City Council - Web Manager</ListItem>
-    </ul>
-  ),
-}
+import text from "./text"
 
 const Wrapper = styled.ul`
   ${({ theme: { space } }) => css`
@@ -72,21 +35,26 @@ const Wrapper = styled.ul`
 
 const MiniCard = styled(motion.li)`
   ${({ theme: { space, colors } }) => css`
-    background-color: white;
+    background-color: ${colors.primary3};
+    color: white;
     list-style-type: none;
     z-index: 1;
-    border: 0.2rem solid ${colors.primary3};
-    padding: ${space.medium} ${space.large} ${space.large} ${space.medium};
+    border: 0.2rem solid ${colors.secondary1};
+    border-bottom: 1rem solid ${colors.secondary1};
+    /* padding: ${space.medium} ${space.large} ${space.large} ${space.medium}; */
     margin-bottom: ${space.medium};
-    width: 49%;
+    width: 23%;
     box-sizing: border-box;
-    border-radius: 1.5rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     &:hover {
       border: 0.2rem solid ${colors.primary1};
-      h2 {
-        color: ${colors.primary1};
-      }
+      border-bottom: 1rem solid;
+      background: white;
+      color: ${colors.primary1};
+    }
+    h2 {
+      color: inherit;
     }
   `}
 `
@@ -98,7 +66,7 @@ const Card = styled(motion.div)`
     z-index: 3;
     background: white;
     padding: ${space.medium};
-    border-radius: 2rem;
+    border-radius: 1rem;
     border: 0.2rem solid ${colors.primary1};
     width: 100%;
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.3);
@@ -137,10 +105,10 @@ const bgVariants = {
 
 const CardContainer = () => {
   const items = [
-    { id: 1, title: "About", content: content.about },
-    { id: 2, title: "Work", content: content.work },
-    { id: 3, title: "Education", content: "" },
-    { id: 4, title: "Projects", content: "" },
+    { id: 1, title: "About", content: text.about },
+    { id: 2, title: "Work", content: text.work },
+    { id: 3, title: "Education", content: text.education },
+    { id: 4, title: "Projects", content: text.projects },
   ]
   const [selectedId, setSelectedId] = useState(null)
   const selectedItem = items.find(x => x.id === selectedId)
@@ -154,7 +122,7 @@ const CardContainer = () => {
               layoutId={item.id}
               onClick={() => setSelectedId(item.id)}
             >
-              <Heading as="h2" m={0} textAlign="left">
+              <Heading as="h2" m={0} textAlign="center" px="medium" py="large">
                 {item.title}
               </Heading>
             </MiniCard>

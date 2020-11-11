@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 import Header from "./header"
 import Content from "./content"
+import Footer from "./footer"
 import theme, { GlobalStyles } from "./theme"
 import "normalize.css"
 import "fontsource-abeezee"
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Content>{children}</Content>
+      <Footer />
     </ThemeProvider>
   )
 }

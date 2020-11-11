@@ -5,9 +5,11 @@ import styled, { css } from "styled-components"
 import LightBulb from "./lightBulb"
 
 const InnerWrapper = styled.div`
-  ${({ theme: { components, colors } }) => css`
+  ${({ theme: { components, colors, space } }) => css`
     ${components.layout}
-    border-bottom: .2rem solid ${colors.primary1};
+    padding-top: ${space.large};
+    padding-bottom: ${space.large};
+    border-bottom: 0.2rem solid ${colors.primary1};
     display: flex;
     align-items: center;
   `}
@@ -17,7 +19,7 @@ const SiteTitle = styled(Link)`
   ${({ theme: { fontSizes, colors, space } }) => css`
     color: ${colors.primary1};
     text-decoration: none;
-    font-size: ${fontSizes.large};
+    font-size: ${fontSizes.xLarge};
     padding-left: ${space.small};
     font-weight: 900;
   `}

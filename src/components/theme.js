@@ -66,7 +66,7 @@ const typography = {
     font-family: "ABeeZee", sans-serif;
     font-weight: 400;
     line-height: 1.3;
-    color: ${colors.primary3};
+    color: ${colors.primary1};
   `,
   h1: css`
     margin-top: 0;
@@ -89,13 +89,25 @@ const typography = {
 export const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
+    height: 100%;
   }
 
   body {
     font-family: 'ABeeZee', sans-serif;
     font-weight: 400;
     line-height: 1.75;
-    color: ${colors.primary2}
+    color: ${colors.primary2};
+    height: 100%;
+  }
+
+  #___gatsby {
+    height: 100%;
+  }
+
+  #gatsby-focus-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   h1, h2, h3, h4, h5 {
@@ -103,7 +115,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'ABeeZee', sans-serif;
     font-weight: 400;
     line-height: 1.3;
-    color: ${colors.primary3};
   }
 
   h1 {
