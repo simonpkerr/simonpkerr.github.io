@@ -37,13 +37,23 @@ export default {
     </ul>
   ),
   education: (
-    <>
-      <Paragraph>Blah</Paragraph>
-    </>
+    <ul>
+      <ListItem>2017: AWS Developer Certified</ListItem>
+      <ListItem>2016: Hubspot inbound and COS certification</ListItem>
+      <ListItem>2014: Umbraco Level 1 &amp; 2</ListItem>
+      <ListItem>2012: MSc Creative Technology (Distinction)</ListItem>
+      <ListItem>2005: BA (Hons) Interactive Multimedia (1st Class)</ListItem>
+    </ul>
   ),
   projects: (
-    <>
-      <Paragraph>Blah</Paragraph>
-    </>
+    <ul>
+      <ListItem>Capital One Email Credit Limit Increase</ListItem>
+      <ListItem>Capital One Online Account Servicing</ListItem>
+      <ListItem>SAMS Mapping tool</ListItem>
+      <ListItem>Financial express</ListItem>
+      <ListItem>Talktalk business portal</ListItem>
+      <ListItem>Talktalk salesforce CRM integration</ListItem>
+      <ListItem>Leicester City Council redesign</ListItem>
+    </ul>
   ),
 }

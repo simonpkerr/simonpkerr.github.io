@@ -1,7 +1,10 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const Content = styled.main`
-  ${({ theme: { components } }) => components.layout}
+  ${({ theme: { components, space } }) => css`
+    ${components.layout}
+    margin-bottom: ${space.large};
+  `}
 `
 
 export default Content

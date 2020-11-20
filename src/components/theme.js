@@ -84,6 +84,25 @@ const typography = {
   h5: css`
     font-size: ${fontSizes.small};
   `,
+  link: css`
+    font-size: ${fontSizes.medium};
+    color: ${colors.primary3};
+    text-decoration: underline;
+    cursor: pointer;
+    padding: ${space.small};
+    outline: 0;
+    border-radius: 5px;
+    border: 0;
+    background: 0;
+    &:hover {
+      text-decoration: none;
+      color: ${colors.primary2};
+    }
+    &:focus,
+    &:active {
+      box-shadow: 0 0 1px 1px ${colors.primary1};
+    }
+  `,
 }
 
 export const GlobalStyles = createGlobalStyle`
